@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const Filter = () => {
+const Filter = ({ onChange }) => {
   return (
     <section className="filter">
       <form className="form-control">
         <input
+          onChange={(e) => {
+            onChange(e.target.value);
+          }}
           type="search"
           name="search"
           id="search"

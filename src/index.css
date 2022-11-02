@@ -27,6 +27,9 @@ img {
   transition: backgroun-color 0.2s;
 }
 
+.toggle :hover {
+  cursor: pointer;
+}
 .btn:hover {
   background-color: #fff;
   color: hsl(207, 26%, 17%);
@@ -41,6 +44,12 @@ body {
   font-family: "Nunito Sans", sans-serif;
   background-color: #202d36;
   color: #fff;
+  transition: backgroun-color 0.4s;
+}
+
+body.light-theme {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
 }
 
 /* header */
@@ -51,6 +60,76 @@ body {
   justify-content: space-between;
   background-color: 2b3743;
   padding: 10px 20px;
+}
+
+header.light-theme {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+}
+
+.header i {
+  cursor: pointer;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 50px;
+}
+
+.form input,
+.form select {
+  background-color: hsl(209, 23%, 22%);
+  padding: 12px;
+  font-family: inherit;
+  border: none;
+  border-radius: 5px;
+  color: hsl(0, 0%, 100%);
+}
+
+.form input::placeholder {
+  color: hsl(0, 0%, 100%);
+}
+
+.form input.light-theme,
+.form select.light-theme {
+  background-color: hsl(0, 0%, 52%);
+}
+
+.countries {
+  padding: 0 50px 50px;
+}
+
+.countries article {
+  transition: background-color 0.4s;
+}
+
+.countries .flag img {
+  border-radius: 5px 5px 0 0;
+}
+
+.countries .details {
+  border-radius: 0 0 5px 5px;
+  background-color: hsl(209, 23%, 22%);
+  margin: -10px 0 30px;
+  padding: 20px;
+  color: hsl(0, 0%, 100%);
+  transition: background-color 0.4s;
+}
+
+.grid .details.light-theme {
+  background-color: hsl(0, 0%, 98%) !important;
+  color: "black";
+}
+
+.countries .details h4 {
+  margin: 10px 0;
+}
+
+.countries .details h4 span {
+  font-weight: 300;
 }
 
 /* filter */
@@ -158,6 +237,18 @@ body {
   }
 }
 
+@media (min-width: 640px) {
+  .countries {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .countries .details {
+    margin: -10px 0 0;
+  }
+}
+
 @media (min-width: 992px) {
   .grid,
   .filter,
@@ -167,5 +258,27 @@ body {
   .grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 60px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .countries {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .header h1 {
+    font-size: 20px;
+    padding: 20px 0;
+  }
+
+  .form input {
+    width: 90vw;
+    margin-bottom: 20px;
+  }
+
+  .form .select select {
+    width: 50vw;
   }
 }
