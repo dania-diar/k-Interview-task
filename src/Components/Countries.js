@@ -49,9 +49,8 @@ const Countries = () => {
       .catch(() => {
         return { msg: "nothing found" };
       });
-    console.log(data);
+
     if (data && data.length > 0) {
-      console.log(data);
       setCountries(data);
     } else {
       setCountries([]);
